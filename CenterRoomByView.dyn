@@ -1,0 +1,506 @@
+{
+  "Uuid": "3c9d0464-8643-5ffe-96e5-ab1769818209",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "CenterRoomByView",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "// Created by Joshuajhostetler@gmail.com\n//Created with Dynamo 2.04\n//",
+      "Id": "c4f1a80ab0484062a06ceb3e2ef47cd8",
+      "Inputs": [],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Application.Document.Current",
+      "Id": "e1ce60dd848d46d89b7caee2df7c6d1a",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "b170b2be9cb94de19469f4f13eac8ac5",
+          "Name": "Document",
+          "Description": "Document",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get the current document\n\nDocument.Current: Document"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Application.Document.ActiveView",
+      "Id": "600d02db37af49a3a461f346f7087c7c",
+      "Inputs": [
+        {
+          "Id": "ce202a4a0d614fedaad5f07c7a0708f6",
+          "Name": "document",
+          "Description": "Revit.Application.Document",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "3506198de0a041c2a2669c184f984c97",
+          "Name": "View",
+          "Description": "View",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get the active view for the document\n\nDocument.ActiveView: View"
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.Categories, DSRevitNodesUI",
+      "SelectedIndex": 425,
+      "NodeType": "ExtensionNode",
+      "Id": "bc3364f2a5a7426cb5eb346e03e2ad23",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "5a45eac409a44ff1b0079c0ceabcaf86",
+          "Name": "Category",
+          "Description": "The selected Category.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "All built-in categories."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "archilab.Revit.Selection.Select.ByCategoryAndView@Revit.Elements.Category,Revit.Elements.Views.View",
+      "Id": "eaf654ab5df94b86a39ff69204fecec0",
+      "Inputs": [
+        {
+          "Id": "68253d421b20440a8a0f262e4685aca0",
+          "Name": "category",
+          "Description": "Category to filter for.\n\nCategory",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7fcf9f52c2b34279965d5809d04241fd",
+          "Name": "view",
+          "Description": "View to filter for.\n\nView",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "f2ccfbce4b364910b9a1767bc6032ade",
+          "Name": "Element",
+          "Description": "Element.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Select Elements by Category and View.\n\nSelect.ByCategoryAndView (category: Category, view: View): Element[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Rhythm.Revit.Elements.Rooms.CenterRoom@Revit.Elements.Room[]",
+      "Id": "04c1360d8b5f49028aab786a106deb2c",
+      "Inputs": [
+        {
+          "Id": "dff969b9fc4341328badcdd2185ff67e",
+          "Name": "room",
+          "Description": "The room to center.\n\nRoom[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "d0227261792842aba21ace2e1a44b0d0",
+          "Name": "room",
+          "Description": "The room.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "This node will center the room.\n\nRooms.CenterRoom (room: Room[]): Room[]"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "b170b2be9cb94de19469f4f13eac8ac5",
+      "End": "ce202a4a0d614fedaad5f07c7a0708f6",
+      "Id": "7efa022521e84e7588669ef79e1873d6"
+    },
+    {
+      "Start": "3506198de0a041c2a2669c184f984c97",
+      "End": "7fcf9f52c2b34279965d5809d04241fd",
+      "Id": "eb4c1544e6794018b05b9f600541783b"
+    },
+    {
+      "Start": "5a45eac409a44ff1b0079c0ceabcaf86",
+      "End": "68253d421b20440a8a0f262e4685aca0",
+      "Id": "4cef436643094c82bc8207395ca4a401"
+    },
+    {
+      "Start": "f2ccfbce4b364910b9a1767bc6032ade",
+      "End": "dff969b9fc4341328badcdd2185ff67e",
+      "Id": "a3d0b87ee44548bf9b99762a6e04391c"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.3.8810",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Notes",
+        "Id": "c4f1a80ab0484062a06ceb3e2ef47cd8",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 253.69091483923398,
+        "Y": -76.0970242105419
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Document.Current",
+        "Id": "e1ce60dd848d46d89b7caee2df7c6d1a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 496.95969805419111,
+        "Y": 647.064582125746
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Document.ActiveView",
+        "Id": "600d02db37af49a3a461f346f7087c7c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 645.88390935099164,
+        "Y": 650.02682511972068
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Categories",
+        "Id": "bc3364f2a5a7426cb5eb346e03e2ad23",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 688.88390935099164,
+        "Y": 551.49567462051368
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Select.ByCategoryAndView",
+        "Id": "eaf654ab5df94b86a39ff69204fecec0",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 917.20666079946568,
+        "Y": 622.54570362273341
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "ʳʰʸᵗʰᵐ|Rooms.CenterRoom",
+        "Id": "04c1360d8b5f49028aab786a106deb2c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1201.8817728523038,
+        "Y": 622.54570362273341
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "7593545275de49389b5dac8ebdcc451c",
+        "Title": "  CUSTOM         ",
+        "Nodes": [
+          "67c8f2c7cfb24d7daae2f22bb00105fc"
+        ],
+        "Left": 588.429375794959,
+        "Top": 50.1355553538809,
+        "Width": 133.0,
+        "Height": 98.0,
+        "FontSize": 24.0,
+        "InitialTop": 89.1355553538809,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 29.0,
+        "Background": "#FFD8D8D8"
+      },
+      {
+        "Id": "4b25698b36f94a4d990b9ad4f774ad25",
+        "Title": "  OUTPUT",
+        "Nodes": [
+          "6a08b3f85a5c4cc5aa4f6ee5b5e3920b"
+        ],
+        "Left": 442.947858611197,
+        "Top": 50.731289127653596,
+        "Width": 142.0,
+        "Height": 98.0,
+        "FontSize": 24.0,
+        "InitialTop": 89.7312891276536,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 29.0,
+        "Background": "#FF48B9FF"
+      },
+      {
+        "Id": "8ef091b80b0746fb8f07c512cce99cb7",
+        "Title": "Script Info",
+        "Nodes": [
+          "c4f1a80ab0484062a06ceb3e2ef47cd8",
+          "0cc8ef41dfa1441fbcbb812fd91e9e29"
+        ],
+        "Left": 243.69091483923398,
+        "Top": -122.0970242105419,
+        "Width": 602.27831639908334,
+        "Height": 159.44611619068269,
+        "FontSize": 30.0,
+        "InitialTop": -76.0970242105419,
+        "InitialHeight": 180.44611619068269,
+        "TextblockHeight": 36.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "10800e4cd21b4861a7d0b7f33b76ff6e",
+        "Title": "DATA",
+        "Nodes": [
+          "61742a44ddd8491d86df72d38d9923cb"
+        ],
+        "Left": 243.531661293421,
+        "Top": 51.283508685706096,
+        "Width": 193.0,
+        "Height": 98.0,
+        "FontSize": 24.0,
+        "InitialTop": 90.2835086857061,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 29.0,
+        "Background": "#FFBB87C6"
+      },
+      {
+        "Id": "a4b1aaecdac844898800b75f478d9a15",
+        "Title": "INPUT",
+        "Nodes": [
+          "e380664b545c4f8fb3175f70a6c03fce"
+        ],
+        "Left": 444.222163367864,
+        "Top": 154.128880095994,
+        "Width": 282.0,
+        "Height": 112.0,
+        "FontSize": 24.0,
+        "InitialTop": 193.128880095994,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 29.0,
+        "Background": "#FFFFAA45"
+      },
+      {
+        "Id": "fc19f518123f43f682980a23d03e792b",
+        "Title": "WIP",
+        "Nodes": [
+          "aafe389a0f304f3889565030324854a4"
+        ],
+        "Left": 243.897932380974,
+        "Top": 155.163138418551,
+        "Width": 192.0,
+        "Height": 112.0,
+        "FontSize": 24.0,
+        "InitialTop": 194.163138418551,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 29.0,
+        "Background": "#FFFFB8D8"
+      },
+      {
+        "Id": "afaa4e5dbb294526ad2dd6feb2e47e77",
+        "Title": "Identify Current view and Rooms",
+        "Nodes": [
+          "e1ce60dd848d46d89b7caee2df7c6d1a",
+          "600d02db37af49a3a461f346f7087c7c",
+          "bc3364f2a5a7426cb5eb346e03e2ad23"
+        ],
+        "Left": 486.95969805419111,
+        "Top": 455.49567462051368,
+        "Width": 377.92421129680054,
+        "Height": 287.531150499207,
+        "FontSize": 36.0,
+        "InitialTop": 551.49567462051368,
+        "InitialHeight": 221.53115049920706,
+        "TextblockHeight": 86.0,
+        "Background": "#FFFFAA45"
+      },
+      {
+        "Id": "0f271dfa609f40d3825bca3042d0757a",
+        "Title": "Select all Rooms in View",
+        "Nodes": [
+          "eaf654ab5df94b86a39ff69204fecec0"
+        ],
+        "Left": 907.20666079946568,
+        "Top": 526.54570362273341,
+        "Width": 241.0,
+        "Height": 215.0,
+        "FontSize": 36.0,
+        "InitialTop": 622.54570362273341,
+        "InitialHeight": 149.0,
+        "TextblockHeight": 86.0,
+        "Background": "#FFBB87C6"
+      },
+      {
+        "Id": "ff60136e7d924a17bca31d38aa3a109f",
+        "Title": "Center Rooms",
+        "Nodes": [
+          "04c1360d8b5f49028aab786a106deb2c"
+        ],
+        "Left": 1191.8817728523038,
+        "Top": 526.54570362273341,
+        "Width": 205.0,
+        "Height": 189.0,
+        "FontSize": 36.0,
+        "InitialTop": 622.54570362273341,
+        "InitialHeight": 123.0,
+        "TextblockHeight": 86.0,
+        "Background": "#FF48B9FF"
+      },
+      {
+        "Id": "67c8f2c7cfb24d7daae2f22bb00105fc",
+        "Title": "USE:\r\nCUSTOM NODES ",
+        "Nodes": [],
+        "Left": 598.429375794959,
+        "Top": 89.1355553538809,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "6a08b3f85a5c4cc5aa4f6ee5b5e3920b",
+        "Title": "USE:\r\nALL DATA OUTPUT ",
+        "Nodes": [],
+        "Left": 452.947858611197,
+        "Top": 89.7312891276536,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "61742a44ddd8491d86df72d38d9923cb",
+        "Title": "USE:\r\nALL MAIN DATA PROCESSES ",
+        "Nodes": [],
+        "Left": 253.531661293421,
+        "Top": 90.2835086857061,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "e380664b545c4f8fb3175f70a6c03fce",
+        "Title": "USE:\r\nFOR THE INCOMMING REFFERENCES              \r\nFILE PATHS, GEOMETRIES .......            ",
+        "Nodes": [],
+        "Left": 454.222163367864,
+        "Top": 193.128880095994,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "aafe389a0f304f3889565030324854a4",
+        "Title": "USE:\r\nFOR WORK IN PROGRESS     \r\n",
+        "Nodes": [],
+        "Left": 253.897932380974,
+        "Top": 194.163138418551,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "0cc8ef41dfa1441fbcbb812fd91e9e29",
+        "Title": "Packages used in this script: \n\tarchi-lab.net version: 2020.22.7\n\tRhythm version: 2019.12.4",
+        "Nodes": [],
+        "Left": 603.96923123831732,
+        "Top": -35.6509080198592,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": 116.59196883989466,
+    "Y": 154.5345406923725,
+    "Zoom": 0.46337745917580864
+  }
+}
