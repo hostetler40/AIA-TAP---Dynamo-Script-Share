@@ -1,0 +1,524 @@
+{
+  "Uuid": "3c9d0464-8643-5ffe-96e5-ab1769818209",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "SHYFT - Duplicate Sheets",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "\"Duplicate Name\";",
+      "Id": "8a174ea3d6c346a5b4fbf236a9696002",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "44c44f9176744764bcaecb3e78084ade",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "7f80395291724691a2114766cc1293bf",
+      "Inputs": [
+        {
+          "Id": "e22e126e9a5c4da3a77fc7520293593c",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "00fb12c2853945afb72cd99aa4b4bd50",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "05cbc393bd6f44b7b0e5b12d20a7c399",
+      "Inputs": [
+        {
+          "Id": "4eabdc81fe434141b49849b12a88616b",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8ba5cfd32ab44d7ab3c9d9bf6f299a3e",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.Views, DSRevitNodesUI",
+      "SelectedIndex": 8,
+      "NodeType": "ExtensionNode",
+      "Id": "3a5ce54d7b45422cb90e9fcb27ee3f13",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "c15a0c8a12e746adbfe75ceb345e51a3",
+          "Name": "Views",
+          "Description": "The selected Views",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "All views available in the current document."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "1;",
+      "Id": "37bad86468194c44b9e26a71bb42f8f7",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "ea720d3f84e14ddf987c2b31c341f880",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
+      "NodeType": "BooleanInputNode",
+      "InputValue": true,
+      "Id": "ce181c29a44440e3b0e97c190cc183fb",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "998b57abe92a4222be017c9ddd960a69",
+          "Name": "",
+          "Description": "Boolean",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Selection between a true and false."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
+      "NodeType": "BooleanInputNode",
+      "InputValue": true,
+      "Id": "d824df15817643a7b94372bbf72bb023",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "4dab57bf98d14c069e1858be3b9066e2",
+          "Name": "",
+          "Description": "Boolean",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Selection between a true and false."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Sheet.Duplicate@Revit.Elements.Views.Sheet[],bool,bool,int,string,string",
+      "Id": "0dcda430eeb14c23b5e4aeec326e2061",
+      "Inputs": [
+        {
+          "Id": "3cee76390d714646af4295c91bc2a64d",
+          "Name": "sheets",
+          "Description": "Enter the Revit Sheets to duplicate.\n\nSheet[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b3edb849faf54959b1f74a4118957234",
+          "Name": "run",
+          "Description": "Set to True to dupicate the input Sheets.\n\nbool",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "972c2fb0e516452b81c60888c40b6f38",
+          "Name": "duplicateWithViews",
+          "Description": "Set to True to duplicate placed Views on the Sheets.\n\nbool",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "98ab07e01502483aab71fb358378e020",
+          "Name": "duplicateOption",
+          "Description": "Enter View Duplicate Option: 0 = Duplicate. 1 = WithDetailing. 2 = AsDependent.\n\nint\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "993675f3d49741f0ba6dec40390298e5",
+          "Name": "suffix",
+          "Description": "Enter a suffix to the duplicated Sheet number and View names. Leave blank to add a prefix only.\n\nstring\nDefault value : \"\"",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f8b2e74bb8c24a91b5413dfbf8364bfd",
+          "Name": "prefix",
+          "Description": "Enter an optional prefix at the start of the duplicated Sheet number and View names. Leave blank to add a suffix only.\n\nstring\nDefault value : \"\"",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "85502a67135a409b83c282c64c45de1e",
+          "Name": "report[]",
+          "Description": "string[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "aec553a50b824d9d96a71d766a8261ca",
+          "Name": "Sheet[]",
+          "Description": "Sheet[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Duplicate selected Sheets with options to control if placed Views are duplicated and the method of duplication.\r\rThe Sheet output returns successfully duplicated Sheets or Sheets from the active document and cant be duplicated. The report output logs any Sheets and/or Views that fail to duplicate or View names that were cleaned of illegal characters.\r\rVisit bimorph.com/bimorph-nodes for support.\n\nSheet.Duplicate (sheets: Sheet[], run: bool, duplicateWithViews: bool, duplicateOption: int = 0, suffix: string = \"\", prefix: string = \"\"): var[]..[]"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "44c44f9176744764bcaecb3e78084ade",
+      "End": "993675f3d49741f0ba6dec40390298e5",
+      "Id": "133736cdc8bb4cb5883bfba581136d99"
+    },
+    {
+      "Start": "c15a0c8a12e746adbfe75ceb345e51a3",
+      "End": "3cee76390d714646af4295c91bc2a64d",
+      "Id": "f6b8a2104e2646eabea4c2576486793e"
+    },
+    {
+      "Start": "ea720d3f84e14ddf987c2b31c341f880",
+      "End": "98ab07e01502483aab71fb358378e020",
+      "Id": "c06f08709c8843efb74d95f17e8d2f34"
+    },
+    {
+      "Start": "998b57abe92a4222be017c9ddd960a69",
+      "End": "972c2fb0e516452b81c60888c40b6f38",
+      "Id": "0ce462c76648411c947abcb1e9c4bc7f"
+    },
+    {
+      "Start": "4dab57bf98d14c069e1858be3b9066e2",
+      "End": "b3edb849faf54959b1f74a4118957234",
+      "Id": "dd27d798ad69458a846655ab210711fe"
+    },
+    {
+      "Start": "85502a67135a409b83c282c64c45de1e",
+      "End": "e22e126e9a5c4da3a77fc7520293593c",
+      "Id": "8cbabc884e12498399e57ddaf3d44cec"
+    },
+    {
+      "Start": "aec553a50b824d9d96a71d766a8261ca",
+      "End": "4eabdc81fe434141b49849b12a88616b",
+      "Id": "a5fa689104924a09acbd5d1ab1c74e33"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.3.8810",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "8a174ea3d6c346a5b4fbf236a9696002",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -21.844871559711464,
+        "Y": 532.78737774029639
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "7f80395291724691a2114766cc1293bf",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1049.70793108199,
+        "Y": 59.9308286812354
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "05cbc393bd6f44b7b0e5b12d20a7c399",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1054.19694112271,
+        "Y": 371.220755699835
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Views",
+        "Id": "3a5ce54d7b45422cb90e9fcb27ee3f13",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 141.48411223743432,
+        "Y": -96.247517778703127
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "37bad86468194c44b9e26a71bb42f8f7",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 69.155128440288536,
+        "Y": 396.32164856160637
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Boolean",
+        "Id": "ce181c29a44440e3b0e97c190cc183fb",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 13.155128440288536,
+        "Y": 278.87880466734237
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Boolean",
+        "Id": "d824df15817643a7b94372bbf72bb023",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 13.155128440288536,
+        "Y": 202.66587215582047
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Sheet.Duplicate",
+        "Id": "0dcda430eeb14c23b5e4aeec326e2061",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 492.202573268866,
+        "Y": 237.16626671195
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "dbfc51e9cfb64065b74921a28e68fd94",
+        "Title": "Select Sheet ",
+        "Nodes": [
+          "3a5ce54d7b45422cb90e9fcb27ee3f13"
+        ],
+        "Left": 131.48411223743432,
+        "Top": -192.24751777870313,
+        "Width": 183.0,
+        "Height": 189.0,
+        "FontSize": 36.0,
+        "InitialTop": -96.247517778703127,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 86.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "ebbe1f99ff2a4925b9a0b17850e72a55",
+        "Title": "Bimorph node",
+        "Nodes": [
+          "0dcda430eeb14c23b5e4aeec326e2061"
+        ],
+        "Left": 482.202573268866,
+        "Top": 184.16626671195,
+        "Width": 304.0,
+        "Height": 276.0,
+        "FontSize": 36.0,
+        "InitialTop": 237.16626671195,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FFFFC999"
+      },
+      {
+        "Id": "699895fac58248e5aa30d5bfc397ecc6",
+        "Title": "Control Inputs",
+        "Nodes": [
+          "8a174ea3d6c346a5b4fbf236a9696002",
+          "37bad86468194c44b9e26a71bb42f8f7",
+          "ce181c29a44440e3b0e97c190cc183fb",
+          "d824df15817643a7b94372bbf72bb023"
+        ],
+        "Left": -31.844871559711464,
+        "Top": 106.66587215582047,
+        "Width": 190.0,
+        "Height": 519.12150558447593,
+        "FontSize": 36.0,
+        "InitialTop": 202.66587215582047,
+        "InitialHeight": 475.12150558447593,
+        "TextblockHeight": 86.0,
+        "Background": "#FFFF7BAC"
+      },
+      {
+        "Id": "43a3232d80314856bb107c91224779f2",
+        "Title": "T/F - Controls running duplicate node\r\n",
+        "Nodes": [],
+        "Left": -256.78440863498554,
+        "Top": 215.42190175350461,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "b11be23dc5ca41808f3732df8133c59e",
+        "Title": "T/F - Controls duplicating on sheet views",
+        "Nodes": [],
+        "Left": -272.78440863498554,
+        "Top": 289.5781360690363,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "881140d273974387bd263ac90c81ad9e",
+        "Title": "Control for view duplicate options:\r\n0 - Duplicate \r\n1 - With Detailing\r\n2 - As Dependent",
+        "Nodes": [],
+        "Left": -238.78440863498554,
+        "Top": 398.55597777918672,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "032d225be20641589ae4e3cf586e01dc",
+        "Title": "Add name in \"..\" for placeholder suffix name",
+        "Nodes": [],
+        "Left": -289.78440863498554,
+        "Top": 542.35542688395594,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "d2c8fa2f239e4fb2aca3ca798164c07b",
+        "Title": "Script Name: SHYFT - Duplicate Sheets.dyn\r\n\r\nCreated by: kevinsullivan36@gmail.com\n\nPackages used in this script: \nbimorphNodes version: 3.0.3\n\n",
+        "Nodes": [],
+        "Left": -211.65291713928923,
+        "Top": -169.49618505287145,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": 159.60991641926657,
+    "Y": 386.78028217661961,
+    "Zoom": 0.447263250047811
+  }
+}
